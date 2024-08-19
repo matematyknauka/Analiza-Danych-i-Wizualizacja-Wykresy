@@ -1,3 +1,5 @@
+Komórka Colab
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -15,3 +17,20 @@ plt.grid(True)  # Dodanie siatki na wykresie
 plt.axhline(0, color='black', lw=0.5, ls='--')  # Dodanie linii poziomej na poziomie 0
 plt.axvline(0, color='black', lw=0.5, ls='--')  # Dodanie linii pionowej na poziomie 0
 plt.show()  # Wyświetlenie wykresu
+
+Koniec komórki
+
+Komórka
+
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.DataFrame({'ID_ucznia': [0, 1, 2, 3, 4], 'Oceny': [5, 4, 3, 2, 5], 'Wiek': [15, 16, 17, 15, 16]})
+df.to_csv('uczniowie.csv', index=False)
+csv_read = pd.read_csv('uczniowie.csv')
+plt.figure(figsize=(8, 6))
+plt.hist(csv_read['Oceny'], bins=5) # Sprawdzić to jeszcze: Przedział P: [ocena min, ocena max] dzielę na przedziały o długości przedziału P/bins chyba [) i na końcu []
+plt.xlabel('Oceny')
+plt.ylabel('Liczba uczniów')
+plt.title('Histogram ocen uczniów')
+plt.show()
+Koniec komórki
