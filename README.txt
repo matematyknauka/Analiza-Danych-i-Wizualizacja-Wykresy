@@ -34,3 +34,31 @@ plt.ylabel('Liczba uczniów')
 plt.title('Histogram ocen uczniów')
 plt.show()
 Koniec komórki
+
+Komórka
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import sys
+
+# Tworzenie DataFrame
+df = pd.DataFrame({'Zarobki': [2000, 2010, 2020, 2015, 2500, 3000, 2500, 2450, 2060, 2700, 2840, 2550, 2340, 2900, 3000, 2250, 2300, 3000, 2990, 2600]})
+
+# Tworzenie histogramu
+plt.figure(figsize=(8, 6))
+r = plt.hist(df['Zarobki'], bins=4, edgecolor='black') # bins to około pierwiastek z liczby obserwacji (czyli z 20)
+print(f"r: {r}")
+
+
+# Ustawienie etykiet osi x na krawędziach binów
+plt.xticks(bins)
+
+# Etykiety osi i tytuł
+plt.xlabel('Zakres kwot')
+plt.ylabel('Ilość kwot w przedziale [)')
+plt.title('Histogram zarobków')
+
+# Wyświetlenie wykresu
+plt.show()
+
+Koniec komórki
