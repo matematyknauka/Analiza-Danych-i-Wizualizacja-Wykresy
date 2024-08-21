@@ -39,26 +39,16 @@ Komórka
 
 import pandas as pd
 import matplotlib.pyplot as plt
-import sys
 
-# Tworzenie DataFrame
-df = pd.DataFrame({'Zarobki': [2000, 2010, 2020, 2015, 2500, 3000, 2500, 2450, 2060, 2700, 2840, 2550, 2340, 2900, 3000, 2250, 2300, 3000, 2990, 2600]})
+data = {'A':[5, 4, 3, 2, 1], 'B':[6, 7, 8, 9, 10]}
+df = pd.DataFrame(data)
 
-# Tworzenie histogramu
-plt.figure(figsize=(8, 6))
-r = plt.hist(df['Zarobki'], bins=4, edgecolor='black') # bins to około pierwiastek z liczby obserwacji (czyli z 20)
-print(f"r: {r}")
-
-
-# Ustawienie etykiet osi x na krawędziach binów
-plt.xticks(bins)
-
-# Etykiety osi i tytuł
-plt.xlabel('Zakres kwot')
-plt.ylabel('Ilość kwot w przedziale [)')
-plt.title('Histogram zarobków')
-
-# Wyświetlenie wykresu
+wartosci, bins, bar = plt.hist(df['A'], bins = 2) # zmmienna = plt.hist(df['A'], bins = 2) to tablica. wartosci to zerowy element, bins pierwszy itd...
+plt.title('Histogram')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.xticks(bins) # bins - lista końców/początków przedziałów
+plt.yticks([0, 1, 2, 3, 4])
 plt.show()
 
 Koniec komórki
